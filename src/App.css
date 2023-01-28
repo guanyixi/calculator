@@ -9,7 +9,9 @@
 
 .App-header {
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container{
@@ -29,29 +31,44 @@
   min-width: 300px;
 }
 
-.chart{
+.charts{
   flex-grow: 1;
+}
+.chart{
   display: flex;
   justify-content: center;
+}
+
+.chart canvas{
+  width:100%;
 }
 
 .worth{
   font-weight: 600;
   margin-top: 20px;
-  color: #666;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #e6f1f2;
-  padding:16px;
+  padding:26px 16px 16px;
   border-radius: 4px;
-  font-size: 14px;
 }
 
-.worth span:nth-child(2){
-  margin-top: 8px;
+.worth span{
+  font-size: 14px;
+  color: #666;
+}
+
+.worth strong{
+  margin: 2px 0 10px;
   font-size:22px;
   color:#00bcd4;
+}
+
+.worth .smaller{
+  font-size:20px;
+  font-weight:400;
+  color: #006b79;
 }
 
 .note{

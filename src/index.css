@@ -17,7 +17,7 @@ main{
 h1{
   font-weight: 600;
   text-align: center;
-  margin:0 0 24px;
+  margin:0;
   font-size:28px;
 }
 
@@ -47,4 +47,12 @@ footer{
   text-align: center;
   font-size: 14px;
   color: #999;
+}
+
+a{
+  color: #00bcd4;
+}
+
+a:hover{
+  color:#0098ac;
 }

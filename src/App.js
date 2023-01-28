@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import {useState} from 'react';
@@ -12,25 +11,32 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Investment Calculator</h1>
+        <p>Proof of concept, not for production.</p>
       </header>
       <main>
-        <h1>Investment Calculator</h1>
+        
         <div className="container">
           <Form
               data = {data}
               setData = {setData}
           />
-          <div className="chart">
-            {data &&
-              <BarChart 
-              data={data}
-              />
-            }
+          <div className="charts">
+            <div className="chart">
+              {data &&
+                <BarChart 
+                data={data}
+                />
+              }
+            </div>
           </div>
+          
         </div>
       </main>
-      <footer>Brooklyn Guan | Jan 29th, 2023</footer>
+      <footer>
+        <p>Library: <a href="https://reactjs.org" target="_blank">react</a> + <a href="https://react-chartjs-2.js.org/" target="_blank">react-chartjs-2</a></p>
+        <p>By Brooklyn Guan on Jan 28th, 2023</p>
+      </footer>
     </div>
   );
 }

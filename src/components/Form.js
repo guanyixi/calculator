@@ -16,36 +16,44 @@ export default function Form({data, setData}){
 
     function valueChange(e){
         const id = e.target.id;
+        const value = e.target.value;
 
         // Binding data
         switch(id){
             case 'initial':
-                // if(e.target.value > 10000000){
-                //     setInitial(10000000);
-                // }else{
-                //     setInitial(e.target.value);
-                // }
-                setInitial(e.target.value);
+                if(Number(value) > 10000000){
+                    setInitial(10000000);
+                }else if(Number(value) < 0){
+                    setInitial(0);
+                }else{
+                    setInitial(value);
+                }
                 break;
             case 'pmt':
-                if(e.target.value > 1000000){
+                if(Number(value) > 1000000){
                     setPmt(1000000);
+                }else if(Number(value) < 0){
+                    setPmt(0);
                 }else{
-                    setPmt(e.target.value);
+                    setPmt(value);
                 }
                 break; 
             case 'rate':
-                if(e.target.value > 15){
+                if(Number(value) > 15){
                     setRate(15);
+                }else if(Number(value) < 0){
+                    setRate(0);
                 }else{
-                    setRate(e.target.value);
+                    setRate(value);
                 }
                 break; 
             case 'years':
-                if(e.target.value > 30){
+                if(Number(value) > 30){
                     setYears(30);
+                }else if(Number(value) < 1){
+                    setYears(1);
                 }else{
-                    setYears(e.target.value);
+                    setYears(value);
                 }
                 break;   
         }
@@ -76,7 +84,7 @@ export default function Form({data, setData}){
 
 
         //this is causing error
-        setContribution((pmt*12*years+initial).toFixed(2));
+        setContribution((Number(pmt)*12*Number(years)+Number(initial)).toFixed(2));
        
 
         prepareData();
@@ -92,20 +100,20 @@ export default function Form({data, setData}){
             userData.push(userDataObj);
         }
 
-        if(userData){
+        if(userData && rate > 0){
             setTimeout(()=>{
                 setData({
                     labels: userData.map((item)=> item.year),
                     datasets: [
                       {
                         type: 'bar',
-                        label: "Value",
+                        label: "Investment Growth",
                         data: userData.map((item)=> item.value),
-                        backgroundColor: '#008ba3'
+                        backgroundColor: '#008ba3',
                       }
-                   ]
+                    ]
                 });
-            }, 1000);
+            }, 500);
         }
     }
 
@@ -135,9 +143,12 @@ export default function Form({data, setData}){
             {
                 fv &&
                 <div className="worth">
-                    <span>Future Value after {years} Years</span>
-                    <span>${formatNum(fv)}</span>
-                    ${contribution} | ${ (fv - contribution).toFixed(2)}
+                    <span>TOTAL WORTH</span>
+                    <strong>${formatNum(fv)}</strong>
+                    <span>Total Contribution</span>
+                    <strong className="smaller">${formatNum(contribution)}</strong>
+                    <span>Return</span>
+                    <strong className="smaller">${ formatNum((fv - contribution).toFixed(2))}</strong>
                 </div>
             }
         </div>
