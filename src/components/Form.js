@@ -50,8 +50,8 @@ export default function Form({data, setData}){
             case 'years':
                 if(Number(value) > 30){
                     setYears(30);
-                }else if(Number(value) < 1){
-                    setYears(1);
+                }else if(Number(value) < 0){
+                    setYears(0);
                 }else{
                     setYears(value);
                 }
@@ -100,7 +100,7 @@ export default function Form({data, setData}){
             userData.push(userDataObj);
         }
 
-        if(userData && rate > 0){
+        if(userData && rate > 0 && years > 0){
             setTimeout(()=>{
                 setData({
                     labels: userData.map((item)=> item.year),

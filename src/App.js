@@ -34,7 +34,7 @@ function App() {
         </div>
       </main>
       <footer>
-        <p>Library: <a href="https://reactjs.org" target="_blank">react</a> + <a href="https://react-chartjs-2.js.org/" target="_blank">react-chartjs-2</a></p>
+        <p>Libraries: <a href="https://reactjs.org" target="_blank">react</a> + <a href="https://react-chartjs-2.js.org/" target="_blank">react-chartjs-2</a></p>
         <p>By Brooklyn Guan on Jan 28th, 2023</p>
       </footer>
     </div>
