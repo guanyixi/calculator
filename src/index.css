@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+main{
+  margin:20px 0;
+  background-color: rgba(200,200,200, 0.2);
+  padding:30px 30px 40px;
+  border-radius: 4px;
+}
+
+h1{
+  font-weight: 600;
+  text-align: center;
+  margin:0 0 24px;
+  font-size:28px;
+}
+
+label{
+  display:block;
+  font-size: 14px;
+  margin:12px 0 4px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="number"], select{
+  padding:8px 6px;
+  border:1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  width:100%;
+  display: block;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus{
+  border-color: #00bcd4;
+  outline: 0;
+}
+
+footer{
+  margin:40px 0 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
 }
